@@ -57,7 +57,7 @@ namespace exerciceErreurs
             bool loginOk = true;
             if (login.Length < 5)
             {
-                throw new FormatException("\nVotre identifiant ne contient pas assez de caractères !");
+                throw new FormatException("\nVotre identifiant ne contient pas assez de caractères !\n");
                 loginOk = false;
             }
             return loginOk;
@@ -68,7 +68,7 @@ namespace exerciceErreurs
             bool mdpOk = true;
             if (verifMdp[0] == ' ' || verifMdp[verifMdp.Length - 1] == ' ')
             {
-                throw new FormatException("\nun mot de passe ne doit pas contenir un espace en début ou en fin de mot !");
+                throw new FormatException("\nun mot de passe ne doit pas contenir un espace en début ou en fin de mot !\n");
                 mdpOk = false;
             }
             else
