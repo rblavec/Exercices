@@ -16,7 +16,7 @@ namespace exerciceErreurs
             {
                 Console.WriteLine("Veuillez saisir un identifiant d'au moins 5 caractères:");
                 id = Console.ReadLine();
-
+                
                 try
                 {
                     verificationLogin(id);
@@ -26,7 +26,7 @@ namespace exerciceErreurs
                 catch (FormatException erreur)
                 {
                     Console.WriteLine(erreur.Message);
-
+                    
                 }
             }
             string mdp = "";
@@ -62,7 +62,7 @@ namespace exerciceErreurs
             }
             return loginOk;
         }
-
+        
         static bool verificationMdp(string verifMdp)
         {
             bool mdpOk = true;
