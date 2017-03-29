@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vehicules
+namespace VehiculeDeux
 {
     public class Program
     {
@@ -16,60 +16,26 @@ namespace Vehicules
             Vehicule mot = new Moto("Harley", Energie.Essence);
             Console.WriteLine(mot.Description);
             Console.ReadKey();
-            //Vehicule avion = new Vehicule("nom", 5, Energie.Electrique); //Ne fonctionne pas car Vehicule est abstrait --> impossible d'instancier Vehicule
 
-            int res = car.CompareTo(mot);//on recupere le resultat de la comparaison
-            if (res < 0)
-                Console.WriteLine("{0} est plus économique que {1}", car.nom, mot);
-            else if (res > 0)
-                Console.WriteLine("{0} est moins économique que {1}", car.nom, mot.nom);
-            else
-                Console.WriteLine("{0} est autant économique que {1}", car.nom, mot.nom);
-
-            Console.ReadKey();
 
         }
     }
 
-    public abstract class Vehicule : IComparable
+    public class Vehicule
     {
         private string _nom;
         private int _nbRoues;
         private Energie _energie;
 
-
-        public abstract double CalculerConso();
-
-        public int CompareTo(object obj)
-        {
-            if (obj is Vehicule)
-            {
-                Vehicule v;
-                v = (Vehicule)obj;  // on transforme la variable de type objet en vehicule pour acceder aux propriétés de véhicule. 
-                                    //Vehicule v = (Vehicule)obj;
-                if (PRK < v.PRK) return -1;
-                else if (PRK > v.PRK) return 1;
-                else return 0;
-
-
-
-            }
-            else
-                throw new ArgumentException();
-
-        }
-
-
         #region propriétés
         public string nom { get; }
         public int nbRoues { get; }
         public Energie energie { get; }
-        public abstract double PRK { get; }
         public virtual string Description
         {
             get
             {
-                return string.Format("Vehicule {0} roule sur {1} roues et à l'énergie {2}.\n", _nom, _nbRoues, _energie);
+                return string.Format("Vehicule {0} roule sur {1} roues et à l'énergie {2}\n", _nom, _nbRoues, _energie);
             }
 
         }
@@ -102,19 +68,6 @@ namespace Vehicules
                 return string.Format("Je suis une moto\r\n") + base.Description;
             }
         }
-
-        public override double PRK
-        {
-            get
-            {
-                return 3;
-            }
-        }
-
-        public override double CalculerConso()
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class Voiture : Vehicule
@@ -134,18 +87,6 @@ namespace Vehicules
 
         }
 
-        public override double PRK
-        {
-            get
-            {
-                return 2;
-            }
-        }
-
-        public override double CalculerConso()
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public enum Energie
