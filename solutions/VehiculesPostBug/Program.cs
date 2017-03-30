@@ -26,12 +26,14 @@ namespace Vehicules
             else
                 Console.WriteLine("{0} est autant économique que {1}", car.nom, mot.nom);
 
-            Voiture v1 = new Voiture("Mégane", 19000);
-            Voiture v2 = new Voiture("Intruder", 13000);
-            Voiture v3 = new Voiture("Enzo", 380000);
-            Voiture v4 = new Voiture("Yamaha XJR1300", 11000);
+            Vehicule v1 = new Voiture("Mégane", 19000);
+            Vehicule v2 = new Voiture("Intruder", 13000);
+            Vehicule v3 = new Voiture("Enzo", 380000);
+            Vehicule v4 = new Voiture("Yamaha XJR1300", 11000);
 
-            Dictionary<string, Voiture> dico = new Dictionary<string, Voiture>();
+            //Dictionary<string, Vehicule> dico = new Dictionary<string, Vehicule>(); // meme chose que la ligne d'en bas avec var
+            var dico = new Dictionary<string, Vehicule>();
+
 
             dico.Add(v1.nom, v1);
             dico.Add(v2.nom, v2);
@@ -40,7 +42,7 @@ namespace Vehicules
 
             foreach (var a in dico)
             {
-                Console.WriteLine("{0} : {1}", a.Value.nom, a.Value.Prix);
+                Console.WriteLine("{0} : {1}", a.Key, a.Value.Prix); // type de key = strin et valeur = vehicule car new Dictionary<string, Vehicule>();
             }
 
             Console.ReadKey();
@@ -117,7 +119,7 @@ namespace Vehicules
 
         #region constructeur
 
-        public Moto(string nom, decimal prix) : base ( nom,  prix)
+        public Moto(string nom, decimal prix) : base(nom, prix)
         {
 
         }
@@ -151,7 +153,7 @@ namespace Vehicules
     public class Voiture : Vehicule
     {
         #region constructeur
-        public Voiture (string nom, decimal prix) : base ( nom,  prix)
+        public Voiture(string nom, decimal prix) : base(nom, prix)
         {
 
         }
