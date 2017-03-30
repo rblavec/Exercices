@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,6 +71,9 @@ namespace ClassesPropriete
             //_longeur = 30.0;
             //_largeur = 30.0;
             _nbBoites++;
+            //Articles = new ArrayList();
+            Articles = new List<Article>();
+            //Articles = new Dictionary<int, Article>();
         }
 
         public Boite(double Long, double Larg, double Haut) : this()
@@ -89,9 +93,16 @@ namespace ClassesPropriete
 
 
         #region Propriétés
+        //public ArrayList Articles { get; } //sa met des objets dans la collection, tout ce qu'on voulait en tant qu'objet
+        public List<Article> Articles { get; }
+
+        //public Dictionary<int, Article> Articles { get; }
+
+
         public double Hauteur
         {
             get { return _hauteur; }
+            //set { _hauteur = value; }
 
         }
 
@@ -123,6 +134,8 @@ namespace ClassesPropriete
 
         public static int NbBoites
         { get { return _nbBoites; } }
+
+
         #endregion
 
 

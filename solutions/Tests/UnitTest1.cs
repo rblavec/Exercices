@@ -11,12 +11,12 @@ namespace Tests
         [TestMethod]
         public void TestCompteur2()
         {
-            int NbBcpBoites = 0;
-            Boite[] TestBcpBoites = new Boite[76];
+            //int nbBcpBoites = 0;
+            Boite[] testBcpBoites = new Boite[76];
             for (int i = 0; i < 76; i++)
             {
-                TestBcpBoites[i] = new Boite();
-                NbBcpBoites = Boite.NbBoites;
+                testBcpBoites[i] = new Boite();
+                //nbBcpBoites = Boite.NbBoites;
                 //NbBcpBoites++;
             }
             Assert.AreEqual(76, Boite.NbBoites);

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5B1DA32-40EA-482A-9E2B-3AEB390F5BD4}</ProjectGuid>
+    <ProjectGuid>{2DFBD570-EFB6-4312-B018-9D578C65787A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassesPropriete</RootNamespace>
-    <AssemblyName>ClassesPropriete</AssemblyName>
+    <RootNamespace>statut</RootNamespace>
+    <AssemblyName>statut</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Article.cs" />
-    <Compile Include="Boite.cs" />
-    <Compile Include="Etiquette.cs" />
+    <Compile Include="Personne.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
